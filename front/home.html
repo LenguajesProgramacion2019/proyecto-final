@@ -10,20 +10,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <script src="myscript.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body>
     <div class="row">
       <div class="col-6">
         <div>
+          <svg id="network" class="edge" height="100%" width="100%">
+          </svg>
         </div>
       </div>
       <div class="col-6">
         <div class="">
           <div class="center-vertical">
-            <button>add input layer</button><br/>
-            <button>add hidden layer</button><br/>
-            <button>add output layer</button>
+            <button id="input">add input layer</button><br/>
+            <button id="hidden">add hidden layer</button><br/>
+            <button id="output">add output layer</button>
           </div>
         </div>
       </div>
