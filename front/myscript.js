@@ -9,7 +9,7 @@ $(document).ready(function(){
   var iter_2;
 
   $( "#input" ).click(function() {
-    input_layers = prompt("Enter the number of input layers (0 < n < 12)", "n");
+    input_layers = prompt("Enter the number of input layers (0 < n < 10)", "n");
 
     for(i=0; i<input_layers; i++){
       var circle = document.createElementNS(svgns, 'circle');
@@ -18,10 +18,14 @@ $(document).ready(function(){
       circle.setAttributeNS(null, 'r', radio);
       circle.setAttributeNS(null, 'style', 'fill: #17FFFB; stroke: black; stroke-width: 2px;' );
       document.getElementById("network").appendChild(circle);
+      
+      $('#options').append('<input id="input' + i +'" type="number" class="input-input" step="0.01" maxlength="4" size="4" min="0" max="1">');
     }
 
     iter_2 = input_layers;
   });
+
+
 
   $( "#hidden" ).click(function() {
     hidden_layers = prompt("Enter the number of input layers (0 < n < 12)", "n");
