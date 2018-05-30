@@ -16,7 +16,7 @@ $(document).ready(function(){
       input_text.push("0");
     }
     $('#input-text').empty();
-    $('#input-text').append("input_layer([" + input_text + "])");
+    $('#input-text').append("input_layer([" + input_text + "]);");
     iter_2 = input_layers;
   });
 
@@ -48,8 +48,8 @@ $(document).ready(function(){
       $("#hidden").prop('disabled', true);
     }
 
-    $('#hidden-text').append("hidden.add_layer(" + hidden_layers + ")<br/>");
-    $('#hidden-text').append("weights.add_random_matrix("+ iter_2 + "," + iter_1 +")");
+    $('#hidden-text').append("hidden_layers.add_layer(" + hidden_layers + ");<br/>");
+    $('#hidden-text').append("weights.add_random_matrix("+ iter_2 + "," + iter_1 +");<br/>");
     num_hidden += 1;
 
   });
@@ -120,14 +120,14 @@ function in_text(a) {
 }
 
 function layer1_func(a){
-  $('#hidden-text').append("hidden_layers[1].add_function(" + a.value + ")<br/>");
+  $('#hidden-text').append("hidden_layers[1].add_function(" + a.value + ");<br/>");
 }
 function layer2_func(a){
-  $('#hidden-text').append("hidden_layers[2].add_function(" + a.value + ")<br/>");
+  $('#hidden-text').append("hidden_layers[2].add_function(" + a.value + ");<br/>");
 }
 function layer3_func(a){
-  $('#hidden-text').append("hidden_layers[3].add_function(" + a.value + ")<br/>");
+  $('#hidden-text').append("hidden_layers[3].add_function(" + a.value + ");<br/>");
 }
 function layer4_func(a){
-  $('#hidden-text').append("hidden_layers[4].add_function(" + a.value + ")<br/>");
+  $('#hidden-text').append("hidden_layers[4].add_function(" + a.value + ");<br/>");
 }
