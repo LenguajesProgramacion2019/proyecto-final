@@ -40,5 +40,10 @@ public class NN_Simulator2PythonListener extends NN_SimulatorBaseListener {
 			System.out.println("hidden_layers.append(" + ctx.INT() + ")");
 		}
 	}
+
+	@Override
+	public void enterAdd_weights(NN_SimulatorParser.Add_weightsContext ctx){
+		System.out.println("W.append(np.random.randn("+ctx.INT().get(0)+","+ctx.INT().get(1)+"))");
+	}
 	
 }
