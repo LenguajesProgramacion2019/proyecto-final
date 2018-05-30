@@ -17,7 +17,7 @@ import java.io.InputStream;
 
 public class NN_Simulator2PythonTool {
     public static void main(String[] args) throws Exception {
-        String inputFile = "in04.txt";
+        String inputFile = "test.txt";
         if ( args.length > 0 ) inputFile = args[0];
         InputStream is = System.in;
         if ( inputFile!=null ) {
@@ -25,13 +25,13 @@ public class NN_Simulator2PythonTool {
         }
         ANTLRInputStream input = new ANTLRInputStream(is);
 
-        TLLexer lexer = new TLLexer(input);
+        NN_SimulatorLexer lexer = new NN_SimulatorLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
-        TLParser parser = new TLParser(tokens);
+        NN_SimulatorParser parser = new NN_SimulatorParser(tokens);
         ParseTree tree = parser.main_program(); // parse
 
         ParseTreeWalker walker = new ParseTreeWalker(); // create standard walker
-        ExtractPythonListener extractor = new ExtractPythonListener(parser);
+        NN_Simulator2PythonListener extractor = new NN_Simulator2PythonListener(parser);
         walker.walk(extractor, tree); // initiate walk of tree with listener
     }
 }

@@ -86,7 +86,8 @@ block_predict : 'layers' '=' 'join' '(' 'hidden_layers' ',' 'output_layer' ')' '
 
 predict_call : 'predict' '(' 'input_layer' ',' 'weights' ',' 'activationS' ')' 				';';
 
-float_array : '[' array_elem ']' ;
+float_array : '[' array_elem ']' 
+			| empty_array;
 array_elem : FLOAT
 	  	   | FLOAT ',' array_elem ;
 
