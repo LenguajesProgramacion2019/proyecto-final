@@ -50,7 +50,7 @@ $(document).ready(function(){
     }
 
     $('#hidden-text').append("hidden_layers.add_layer(" + hidden_layers + ");<br/>");
-    $('#hidden-text').append("weights.add_random_matrix("+ iter_2 + "," + iter_1 +");<br/>");
+    $('#hidden-text').append("weights.add_random_matrix("+ iter_1 + "," + iter_2 +");<br/>");
     num_hidden += 1;
 
   });
@@ -61,7 +61,7 @@ $(document).ready(function(){
 
     output_layers = prompt("Enter the number of output layers (1 <= n <= 10)", "n");
     for(i=0; i<output_layers; i++){
-      $(id_0).append('<input type="text" class="output-hidden" step="0.01" maxlength="4" size="4" min="0" max="1">');
+      $(id_0).append('<input type="text" class="output-hidden" onblur="output_func(this)" step="0.01" maxlength="4" size="4" min="0" max="1">');
     }
 
     for(i=0; i<hidden_layers; i++){
@@ -75,6 +75,20 @@ $(document).ready(function(){
         document.getElementById(id_1).appendChild(line);
       }
     }
+    $('#output-text').append("weights.add_random_matrix("+ hidden_layers + "," + output_layers +");<br/>");
+  });
+
+  $( "#predict" ).click(function() {
+    $('#predict-text').append("function predict(x, W){<br/>" +
+                              "  z_1 = x * w_1;<br/>" +
+                              "  a_1 = f[1] ( z_1 );<br/>" +
+                              "  for i in 2...num_layers{<br/>" +
+                              "    z_i = a_{i-1} * w_i;<br/>" +
+                              "   	a_i = f[i] ( z_i );<br/>" +
+                              "  }<br/>" +
+                              "  return a_{num_layers};<br/>" +
+                              "}<br/><br/>" +
+                              "predict(input_layer, weights);<br/>")
   });
 
 });
@@ -128,6 +142,10 @@ function layer3_func(a){
 }
 function layer4_func(a){
   $('#hidden-text').append("hidden_layers[4].function(\"" + a.value + "\");<br/>");
+}
+
+function output_func(a){
+  $('#output-text').append("output_layer.function(\"" + a.value + "\");<br/>");
 }
 
 var x=0;
