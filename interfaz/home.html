@@ -11,6 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+
     <script src="myscript.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -64,7 +68,8 @@
         <div class="">
             <button id="input">add input layer</button><br/>
             <button id="hidden">add hidden layer</button><br/>
-            <button id="output">add output layer</button>
+            <button id="output">add output layer</button><br/>
+            <input id="uploadText" type="file" size="15"  onchange="PreviewText();"/>
         </div>
       </div>
     </div>
@@ -73,8 +78,10 @@
       <div class="col-12">
         <div class="scrolly">
           <p id="input-text">input_layer([]);</p>
-          <p id="hidden-text">hidden_layers([]);<br/></p>
-          <p id="weights-text">weights([]);</p>
+          <p id="hidden-text">
+            hidden_layers([]);<br/>
+            weights([]);<br/>
+          </p>
           <p id="output-text">output_layer=output(0);</p>
 
         </div>
@@ -86,5 +93,9 @@
       </div>
     </div>
 
+    <object id="obj" width="100%" height="400" data=""></object>
+    <div>
+        <input type="hidden" id="uploadTextValue" name="uploadTextValue" value="" />
+    </div>
   </body>
 </html>

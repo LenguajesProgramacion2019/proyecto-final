@@ -1,9 +1,9 @@
 /***
  * Excerpted from "The Definitive ANTLR 4 Reference",
  * published by The Pragmatic Bookshelf.
- * Copyrights apply to this code. It may not be used to create training material, 
+ * Copyrights apply to this code. It may not be used to create training material,
  * courses, books, articles, and the like. Contact us if you are in doubt.
- * We make no guarantees that this code is fit for any purpose. 
+ * We make no guarantees that this code is fit for any purpose.
  * Visit http://www.pragmaticprogrammer.com/titles/tpantlr2 for more book information.
 ***/
 import org.antlr.v4.runtime.ANTLRInputStream;
@@ -17,7 +17,7 @@ import java.io.InputStream;
 
 public class NN_Simulator2PythonTool {
     public static void main(String[] args) throws Exception {
-        String inputFile = "test.txt";
+        String inputFile = "test01.txt";
         if ( args.length > 0 ) inputFile = args[0];
         InputStream is = System.in;
         if ( inputFile!=null ) {

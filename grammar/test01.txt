@@ -4,5 +4,4 @@ hidden_layers([]);
 weights([]);
 hidden_layers.add_layer(4);
 weights.add_random_matrix(4,5);
-
-
+hidden_layers[1].function("tanh");

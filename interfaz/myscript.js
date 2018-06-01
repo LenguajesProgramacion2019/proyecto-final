@@ -76,9 +76,6 @@ $(document).ready(function(){
     }
   });
 
-  $( "input" ).click(function() {
-    alert("0");
-  });
 });
 
 function in_text(a) {
@@ -120,14 +117,28 @@ function in_text(a) {
 }
 
 function layer1_func(a){
-  $('#hidden-text').append("hidden_layers[1].add_function(" + a.value + ");<br/>");
+  $('#hidden-text').append("hidden_layers[1].function(\"" + a.value + "\");<br/>");
 }
 function layer2_func(a){
-  $('#hidden-text').append("hidden_layers[2].add_function(" + a.value + ");<br/>");
+  $('#hidden-text').append("hidden_layers[2].function(\"" + a.value + "\");<br/>");
 }
 function layer3_func(a){
-  $('#hidden-text').append("hidden_layers[3].add_function(" + a.value + ");<br/>");
+  $('#hidden-text').append("hidden_layers[3].function(\"" + a.value + "\");<br/>");
 }
 function layer4_func(a){
-  $('#hidden-text').append("hidden_layers[4].add_function(" + a.value + ");<br/>");
+  $('#hidden-text').append("hidden_layers[4].function(\"" + a.value + "\");<br/>");
 }
+
+
+
+function PreviewText() {
+	var oFReader = new FileReader();
+  var long = document.getElementById("uploadText").files[0].name.length;
+	oFReader.readAsDataURL(document.getElementById("uploadText").files[0]);
+	oFReader.onload = function (oFREvent) {
+    document.getElementById("uploadTextValue").value = oFREvent.target.result;
+		document.getElementById("obj").data = oFREvent.target.result;
+    document.getElementById("input-text").innerHTML = "";
+    document.getElementById("input-text").innerHTML = "input_layer(" + document.getElementById("uploadText").files[0].name.substring(0, long-4) + ");";
+	};
+};

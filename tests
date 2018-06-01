@@ -1,0 +1,14 @@
+input_layer([0.6,0.05,0.05,0.1,0.2]);
+
+hidden_layers([]);
+weights([]);
+hidden_layers.add_layer(4);
+weights.add_random_matrix(4,5);
+hidden_layers.add_layer(2);
+weights.add_random_matrix(2,4);
+hidden_layers.add_layer(3);
+weights.add_random_matrix(3,2);
+hidden_layers[1].function("tanh");
+hidden_layers[2].function("sigm");
+
+output_layer=output(0);

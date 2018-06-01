@@ -1,7 +1,7 @@
 grammar NN_Simulator;
 
 //saltar tabs y spaces
-WS : [ \t\r\n]+ -> skip; 
+WS : [ \t\r\n]+ -> skip;
 COMMENTS : '#' [a-zA-Z0-9 ()]* -> skip;
 
 main_program : structure general_conf execute;
@@ -21,7 +21,7 @@ add_hidden : 'hidden_layers' '.' 'add_layer' '(' INT ')' ';' add_weights 					 a
 add_weights : 'weights' '.' 'add_random_matrix' '(' INT ',' INT ')' ';';
 
 add_function : 'hidden_layers' '.' 'function' '(' STRING ')' ';' add_hidden
-			 | add_hidden ; 
+			 | add_hidden ;
 
 output_layer : 'output_layer' '(' INT ')' ';' output_conf;
 
@@ -64,7 +64,7 @@ forward_propagate : 'layers' '=' 'join' '(' 'hidden_layers' ',' 'output_layer' 	
 
 backward_propagate : 'loss' '=' '(' 'y' '-' 'a_{num_layers}' ')' '**' '2'
 					 'for' 'j' 'in' 'num_layers...1' '{'
-					 'z_i' '=' 'a_i-1' '*' 'w_2' ';'	
+					 'z_i' '=' 'a_i-1' '*' 'w_2' ';'
 					 'a_i' '=' 'f[i]' '(' 'z_i' ')' ';'
 					 '}' ;
 
@@ -73,7 +73,7 @@ move_step : 'iteration' ;
 predict : predict_funct predict_call
 		| ;
 
-predict_funct : 'function' 'predict' '(' 'x' ',' 'W' ',' 'activations' ')' '{' block_predict '}';  
+predict_funct : 'function' 'predict' '(' 'x' ',' 'W' ',' 'activations' ')' '{' block_predict '}';
 
 block_predict : 'layers' '=' 'join' '(' 'hidden_layers' ',' 'output_layer' ')' ';'
 				'z_1' '=' 'x' '*' 'w_1' ';'
@@ -86,7 +86,7 @@ block_predict : 'layers' '=' 'join' '(' 'hidden_layers' ',' 'output_layer' ')' '
 
 predict_call : 'predict' '(' 'input_layer' ',' 'weights' ',' 'activationS' ')' 				';';
 
-float_array : '[' array_elem ']' 
+float_array : '[' array_elem ']'
 			| empty_array;
 array_elem : FLOAT
 	  	   | FLOAT ',' array_elem ;
