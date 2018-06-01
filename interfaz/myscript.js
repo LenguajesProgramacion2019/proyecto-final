@@ -1,6 +1,9 @@
 var input_text = [];
 var iter_1;
 var iter_2;
+var cont_1=1;
+var cont_2=1;
+var layer = 1;
 
 $(document).ready(function(){
 
@@ -32,6 +35,9 @@ $(document).ready(function(){
 
     iter_1 = iter_2;
     iter_2 = hidden_layers;
+    cont_1=1;
+    cont_2=1;
+
     for(var k=0; k<iter_1; k++){
       for(var j=0; j<iter_2; j++){
         var line = document.createElementNS(svgns,'line');
@@ -40,7 +46,7 @@ $(document).ready(function(){
         line.setAttributeNS(null, 'x2', 70);
         line.setAttributeNS(null, 'y2', 35+(70*j));
         line.setAttributeNS(null, 'onclick', 'add_weight()');
-        line.setAttributeNS(null, 'style', 'stroke: black; stroke-width: 2px;' );
+        line.setAttributeNS(null, 'style', 'stroke: black; stroke-width: 3px;' );
         document.getElementById(id_1).appendChild(line);
       }
     }
@@ -64,6 +70,11 @@ $(document).ready(function(){
       $(id_0).append('<input type="text" class="output-hidden" onblur="output_func(this)" step="0.01" maxlength="4" size="4" min="0" max="1">');
     }
 
+    iter_1 = hidden_layers;
+    iter_2 = output_layers;
+    cont_1 = 1;
+    cont_2 = 1;
+
     for(i=0; i<hidden_layers; i++){
       for(j=0; j<output_layers; j++){
         var line = document.createElementNS(svgns,'line');
@@ -71,7 +82,8 @@ $(document).ready(function(){
         line.setAttributeNS(null, 'y1', 35+(70*i));
         line.setAttributeNS(null, 'x2', 70);
         line.setAttributeNS(null, 'y2', 35+(70*j));
-        line.setAttributeNS(null, 'style', 'stroke: black; stroke-width: 2px;' );
+        line.setAttributeNS(null, 'onclick', 'add_weight()');
+        line.setAttributeNS(null, 'style', 'stroke: black; stroke-width: 3px;' );
         document.getElementById(id_1).appendChild(line);
       }
     }
@@ -148,22 +160,19 @@ function output_func(a){
   $('#output-text').append("output_layer.function(\"" + a.value + "\");<br/>");
 }
 
-var x=0;
-var y=0;
 function add_weight(){
   var weight = prompt("Enter the weight", "n");
-  if(y == iter_2){
-    console.log(iter_2);
-    y = 0;
-    x ++;
+  $('#weights').append("weights["+ layer +"]["+ cont_1 +"]["+ cont_2 +"] = "+ weight +";<br/>");
+  if(cont_2 == iter_2){
+    cont_2 = 0;
+    cont_1 ++;
   }
-  else if(x == iter_1-1){
-    x = 0;
-    y = 0;
+  if(cont_1 >= iter_1*iter_2){
+    cont_1 = 1;
+    cont_2 = 0;
+    layer++;
   }
-  console.log(x);
-  console.log(y);
-  y++;
+  cont_2++;
 }
 
 
