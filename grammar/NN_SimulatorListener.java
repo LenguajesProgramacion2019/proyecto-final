@@ -107,6 +107,16 @@ public interface NN_SimulatorListener extends ParseTreeListener {
 	 */
 	void exitOutput_function(NN_SimulatorParser.Output_functionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link NN_SimulatorParser#modify_weights}.
+	 * @param ctx the parse tree
+	 */
+	void enterModify_weights(NN_SimulatorParser.Modify_weightsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NN_SimulatorParser#modify_weights}.
+	 * @param ctx the parse tree
+	 */
+	void exitModify_weights(NN_SimulatorParser.Modify_weightsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link NN_SimulatorParser#general_conf}.
 	 * @param ctx the parse tree
 	 */
@@ -306,4 +316,14 @@ public interface NN_SimulatorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitText(NN_SimulatorParser.TextContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NN_SimulatorParser#flotante}.
+	 * @param ctx the parse tree
+	 */
+	void enterFlotante(NN_SimulatorParser.FlotanteContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NN_SimulatorParser#flotante}.
+	 * @param ctx the parse tree
+	 */
+	void exitFlotante(NN_SimulatorParser.FlotanteContext ctx);
 }

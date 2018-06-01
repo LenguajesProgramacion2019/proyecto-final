@@ -135,6 +135,18 @@ public class NN_SimulatorBaseListener implements NN_SimulatorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterModify_weights(NN_SimulatorParser.Modify_weightsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitModify_weights(NN_SimulatorParser.Modify_weightsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterGeneral_conf(NN_SimulatorParser.General_confContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -370,6 +382,18 @@ public class NN_SimulatorBaseListener implements NN_SimulatorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitText(NN_SimulatorParser.TextContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFlotante(NN_SimulatorParser.FlotanteContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFlotante(NN_SimulatorParser.FlotanteContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

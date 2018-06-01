@@ -6,7 +6,7 @@ COMMENTS : '#' [a-zA-Z0-9 ()]* -> skip;
 
 main_program : structure general_conf execute;
 
-structure : input_layer hidden_layer output_layer;
+structure : input_layer hidden_layer output_layer modify_weights;
 
 input_layer : 'input_layer' '(' float_array ')' ';';
 
@@ -26,6 +26,10 @@ add_function : 'hidden_layers' '[' intn ']' '.' 'function' '(' text ')' ';' add_
 output_layer : 'output_layer' '(' intn ')' ';' add_weights output_function;
 
 output_function : 'output_layer' '.' 'function' '(' text ')' ';' ;
+
+modify_weights : 'weights' '[' intn ']' '[' intn ']' '[' intn ']' '=' flotante ';' 							modify_weights 
+			|	
+			; 
 
 general_conf : epochs learning_rate
 			 | ;
@@ -89,6 +93,8 @@ empty_array : '[' ']';
 intn : INT ;
 
 text : STRING ;
+
+flotante : FLOAT ;
 
 INT : [0-9]+ ;
 FLOAT : [0-9]+ '.' [0-9]+ ;

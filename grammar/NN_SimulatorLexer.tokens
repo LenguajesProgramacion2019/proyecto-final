@@ -70,8 +70,8 @@ STRING=58
 ']'=12
 'function'=13
 'output_layer'=14
-'epochs'=15
-'='=16
+'='=15
+'epochs'=16
 'alpha'=17
 'gradient_descent'=18
 'x'=19

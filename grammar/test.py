@@ -66,23 +66,6 @@ W.append(np.random.randn(3,6))
 #Changing activation function 
 f[-1] = "sigm"
 
-#Number of epochs for training
-epochs = 15
-#Learning rate for training
-alpha = 0.05
+#Modifying weights vector
+W[0][1][1] = 200.0
 
-#Section for predictions
-def predict(x, W):
-	z = [0 for i in range(len(layers))]
-	a = [0 for i in range(len(layers))]
-	z[0] = np.dot(x, W[0])
-	f0 = eval(f[0])
-	a[0] = f0(z[0])
-	for i in range(1,len(layers)):
-		z[i] = np.dot(a[i-1], W[i])
-		fi = eval(f[i])
-		a[i] = fi(z[i])
-	return a[-1]
-
-y = predict(input_layer, W)
-print y

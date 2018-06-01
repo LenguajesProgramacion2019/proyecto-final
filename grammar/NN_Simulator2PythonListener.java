@@ -123,7 +123,25 @@ public class NN_Simulator2PythonListener extends NN_SimulatorBaseListener {
 	}
 
 	@Override
+	public void enterModify_weights(NN_SimulatorParser.Modify_weightsContext ctx){
+		TokenStream tokens = parser.getTokenStream();
+		if(ctx.flotante() != null){
+		String integer1 = tokens.getText(ctx.intn().get(0));
+		String integer2 = tokens.getText(ctx.intn().get(1));
+		String integer3 = tokens.getText(ctx.intn().get(2));
+		String floatp = tokens.getText(ctx.flotante());
+		int true_int1 = Integer.parseInt(integer1) - 1;
+		int true_int2 = Integer.parseInt(integer2) - 1;
+		int true_int3 = Integer.parseInt(integer3) - 1;
+		System.out.println("#Modifying a weight connection");
+		System.out.println("W["+Integer.toString(true_int1)+"]["+
+			Integer.toString(true_int2)+"]["+Integer.toString(true_int3)+"] = " + floatp);
+		}	
+	}
+
+	@Override
 	public void enterEpochs(NN_SimulatorParser.EpochsContext ctx){
+		System.out.println();
 		TokenStream tokens = parser.getTokenStream();
 		if(ctx.intn() != null){
 			String integer = tokens.getText(ctx.intn());
@@ -141,7 +159,7 @@ public class NN_Simulator2PythonListener extends NN_SimulatorBaseListener {
 	}
 
 	public void enterPredict(NN_SimulatorParser.PredictContext ctx){
-		System.out.println("#Section for predictions");
+		System.out.println("\n#Section for predictions");
 	}
 
 	public void enterPredict_funct(NN_SimulatorParser.Predict_functContext ctx){

@@ -16,6 +16,9 @@ output_layer(6);
 weights.add_random_matrix(3,6);
 output_layer.function("sigm");
 
+weights[1][2][2] = 200.0;
+weights[2][2][1] = 30.0;	
+
 epochs = 15;
 alpha = 0.05;
 
