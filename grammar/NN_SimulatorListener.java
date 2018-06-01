@@ -97,16 +97,6 @@ public interface NN_SimulatorListener extends ParseTreeListener {
 	 */
 	void exitOutput_layer(NN_SimulatorParser.Output_layerContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NN_SimulatorParser#output_conf}.
-	 * @param ctx the parse tree
-	 */
-	void enterOutput_conf(NN_SimulatorParser.Output_confContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link NN_SimulatorParser#output_conf}.
-	 * @param ctx the parse tree
-	 */
-	void exitOutput_conf(NN_SimulatorParser.Output_confContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link NN_SimulatorParser#output_function}.
 	 * @param ctx the parse tree
 	 */
@@ -116,16 +106,6 @@ public interface NN_SimulatorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitOutput_function(NN_SimulatorParser.Output_functionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link NN_SimulatorParser#output_error}.
-	 * @param ctx the parse tree
-	 */
-	void enterOutput_error(NN_SimulatorParser.Output_errorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link NN_SimulatorParser#output_error}.
-	 * @param ctx the parse tree
-	 */
-	void exitOutput_error(NN_SimulatorParser.Output_errorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link NN_SimulatorParser#general_conf}.
 	 * @param ctx the parse tree
@@ -306,4 +286,24 @@ public interface NN_SimulatorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitEmpty_array(NN_SimulatorParser.Empty_arrayContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NN_SimulatorParser#intn}.
+	 * @param ctx the parse tree
+	 */
+	void enterIntn(NN_SimulatorParser.IntnContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NN_SimulatorParser#intn}.
+	 * @param ctx the parse tree
+	 */
+	void exitIntn(NN_SimulatorParser.IntnContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NN_SimulatorParser#text}.
+	 * @param ctx the parse tree
+	 */
+	void enterText(NN_SimulatorParser.TextContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NN_SimulatorParser#text}.
+	 * @param ctx the parse tree
+	 */
+	void exitText(NN_SimulatorParser.TextContext ctx);
 }

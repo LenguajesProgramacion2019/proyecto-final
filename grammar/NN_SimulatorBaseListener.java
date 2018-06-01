@@ -123,18 +123,6 @@ public class NN_SimulatorBaseListener implements NN_SimulatorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOutput_conf(NN_SimulatorParser.Output_confContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitOutput_conf(NN_SimulatorParser.Output_confContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterOutput_function(NN_SimulatorParser.Output_functionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -142,18 +130,6 @@ public class NN_SimulatorBaseListener implements NN_SimulatorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitOutput_function(NN_SimulatorParser.Output_functionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterOutput_error(NN_SimulatorParser.Output_errorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitOutput_error(NN_SimulatorParser.Output_errorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -370,6 +346,30 @@ public class NN_SimulatorBaseListener implements NN_SimulatorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitEmpty_array(NN_SimulatorParser.Empty_arrayContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIntn(NN_SimulatorParser.IntnContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIntn(NN_SimulatorParser.IntnContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterText(NN_SimulatorParser.TextContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitText(NN_SimulatorParser.TextContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

@@ -1,0 +1,32 @@
+input_layer([0.6,0.05,0.05,0.1,0.2]);
+
+hidden_layers([]);
+weights([]);
+hidden_layers.add_layer(4);
+weights.add_random_matrix(5,4);
+hidden_layers.add_layer(2);
+weights.add_random_matrix(4,2);
+hidden_layers.add_layer(3);
+weights.add_random_matrix(2,3);
+hidden_layers[1].function("tanh");
+hidden_layers[2].function("relu");
+hidden_layers[3].function("sigm");
+
+output_layer(6);
+weights.add_random_matrix(3,6);
+output_layer.function("sigm");
+
+epochs = 15;
+alpha = 0.05;
+
+function predict(x, W){
+	z_1 = x * w_1 ;
+	a_1 = f[1] ( z_1 ) ;
+	for i in 2...num_layers {
+		z_i = a_{i-1} * w_i ;
+		a_i = f[i] ( z_i ) ;
+	}
+	return a_{num_layers};
+}
+
+predict(input_layer, weights);
