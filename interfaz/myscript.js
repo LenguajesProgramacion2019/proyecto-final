@@ -1,4 +1,7 @@
 var input_text = [];
+var iter_1;
+var iter_2;
+
 $(document).ready(function(){
 
   var input_layers = 0;
@@ -6,9 +9,6 @@ $(document).ready(function(){
   var num_hidden = 1;
   var radio = 10;
   var svgns = "http://www.w3.org/2000/svg";
-  var iter_1;
-  var iter_2;
-
   $( "#input" ).click(function() {
     input_layers = prompt("Enter the number of input layers (1 <= n <= 10)", "n");
     for(i=0; i<input_layers; i++){
@@ -39,6 +39,7 @@ $(document).ready(function(){
         line.setAttributeNS(null, 'y1', 35+(70*k));
         line.setAttributeNS(null, 'x2', 70);
         line.setAttributeNS(null, 'y2', 35+(70*j));
+        line.setAttributeNS(null, 'onclick', 'add_weight()');
         line.setAttributeNS(null, 'style', 'stroke: black; stroke-width: 2px;' );
         document.getElementById(id_1).appendChild(line);
       }
@@ -127,6 +128,24 @@ function layer3_func(a){
 }
 function layer4_func(a){
   $('#hidden-text').append("hidden_layers[4].function(\"" + a.value + "\");<br/>");
+}
+
+var x=0;
+var y=0;
+function add_weight(){
+  var weight = prompt("Enter the weight", "n");
+  if(y == iter_2){
+    console.log(iter_2);
+    y = 0;
+    x ++;
+  }
+  else if(x == iter_1-1){
+    x = 0;
+    y = 0;
+  }
+  console.log(x);
+  console.log(y);
+  y++;
 }
 
 

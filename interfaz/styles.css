@@ -84,3 +84,40 @@ button{
   border-color: #84FF01;
   text-align: center;
 }
+
+/* ==================================================
+  modal
+  ================================================== */
+.my-modal {
+  border: 1px solid var(--black-pc);
+  max-width: 500px;
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 100px;
+  background:  white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px var(--gray-shadow);
+}
+
+.modal-close {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: -25px;
+  top: -25px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--main-green);
+  color: white;
+  cursor: pointer;
+  background-image: url("https://png.icons8.com/wired/38/000000/delete-sign.png");
+}
+.modal-close:after {
+  font-weight: bold;
+  font-size: 25px;
+}
